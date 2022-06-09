@@ -8,26 +8,31 @@ The goal is to create a Github Template of a starter react/vite app w/ ci/cd gh 
 
 Setup:
 
-- add repo name as `base` value to config object in `vite.config.js`
+- Add repo name as `base` value to config object in `vite.config.js`
 
-Manual Deployment steps:
+Manual Deployment steps (can skip):
 
-- run `npm run build`
-- run `git add dist -f` to force check the generated dist folder into the repo
-- commit the code
-- run `git subtree push --prefix dist origin gh-pages`
+- Run `npm run build`
+- Run `git add dist -f` to force check the generated dist folder into the repo
+- Commit the code
+- Run `git subtree push --prefix dist origin gh-pages`
 
 CI Scripts
 
-- add `execa` as a dev dependency
-- go to the repo's Actions tab and commit the default `main.yml` file
-  - github actions should:
-    - setup  nodejs
-    - install w/ clean dependencies
-    - install dependencies
-    - run deploy script to gh-pages
+- Add `execa` as a dev dependency
+- Go to the repo's Actions tab and commit the default `main.yml` file
+  - Github actions should:
+    - Setup  nodejs
+    - Install w/ clean dependencies
+    - Install dependencies
+    - Run deploy script to gh-pages
 
-NOTE: if using this template update the following:
+## Using this repo as a template
 
-- [ ]  `base` value in `vite.config.js` to match your repo when deploying
-- [ ]  the git config user object in the `main.yml` file to use your git name and email when pushing to gh pages
+Initialize your gh-page:
+
+- [ ] Either run manual deployment, or go to the repo's settings section, and under the Pages tab, set `gh-pages` and `/root` as the Source and Save.
+- [ ] Update the `base` value in `vite.config.js` to match your repo name.
+- [ ] Update the git config user object in the `main.yml` file to use your git name and email when pushing to gh pages
+
+Commit and push the above updates to your repo and your gh page should be deployed to `<gh-username>.github.io/<gh-repo-name>`
