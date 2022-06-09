@@ -26,3 +26,8 @@ CI Scripts
     - install w/ clean dependencies
     - install dependencies
     - run deploy script to gh-pages
+
+NOTE: if using this template update the following:
+
+- [ ]  `base` value in `vite.config.js` to match your repo when deploying
+- [ ]  the git config user object in the `main.yml` file to use your git name and email when pushing to gh pages
